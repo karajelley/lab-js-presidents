@@ -425,7 +425,7 @@ function getNames(presidentsArr) {
   );
   return presNames;
 }
-console.log(getNames(presidents));
+//console.log(getNames(presidents));
 
 
 
@@ -437,14 +437,21 @@ function getDemocraticPresidents(presidentsArr) {
    pres.party === 'Democratic');
   return filteredParty
 }
-console.log(getDemocraticPresidents(presidents));
+//console.log(getDemocraticPresidents(presidents));
 
 
 
 // Iteration 3 | Count Years in Office - reduce()
-function  countYearsInOffice(presidentsArr) {}
-
-
+function  countYearsInOffice(presidentsArr) {
+    const yearsAll = presidentsArr.reduce((acc, curr) => {
+      if (typeof curr.leftOffice !== null) {
+        acc += curr.leftOffice - curr.tookOffice
+        return acc
+      }
+    }, 0);
+    return yearsAll;
+  }
+console.log(countYearsInOffice(presidents));
 
 
 // Iteration 4 | Sort Presidents by Birth Year - `sort()`
