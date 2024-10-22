@@ -431,8 +431,13 @@ console.log(getNames(presidents));
 
 
 // Iteration 2 | Democratic Presidents - `filter()`
-function getDemocraticPresidents(presidentsArr) {}
 
+function getDemocraticPresidents(presidentsArr) {
+  const filteredParty = presidentsArr.filter((pres) =>
+   pres.party === 'Democratic');
+  return filteredParty
+}
+console.log(getDemocraticPresidents(presidents));
 
 
 
